@@ -2,9 +2,11 @@
 #include <string>
 #include <iostream>
 
+#include "TextFactory.h"
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(600, 1000), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(600, 1000), "Noctus Player");
     sf::CircleShape shape(100.f);
     sf::Font font;
     if (!font.loadFromFile("SourceCodePro-VariableFont_wght.ttf"))
@@ -12,11 +14,7 @@ int main()
         std::cout << "Error Loading Font" << std::endl;
     }
 
-    sf::Text text;
-    text.setFont(font); 
-    text.setString("Hello World.");
-    text.setCharacterSize(15); 
-    text.setFillColor(sf::Color(232, 232, 237, 255));
+    TextFactory textFactory;
 
     while (window.isOpen())
     {
@@ -28,7 +26,7 @@ int main()
         }
 
         window.clear();
-        window.draw(text);
+        textFactory.DrawText(&window, "Okay let's see if text wrapping is working. That means adding a nice long string to test here real quick give me a moment. iuawvuwviawvlwnvijwklevweniuwcenlkwjalncjwbelubiuawnlvkjewanbwiuvk.baiwlebvlakwvjaehvabwlivbawliubwlivbwe", font);
         window.display();
     }
 

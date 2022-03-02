@@ -146,9 +146,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="SourceCodePro-VariableFont_wght.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
