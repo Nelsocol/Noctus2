@@ -7,10 +7,8 @@
 class TextFragment
 {
 public:
-	TextFragment(sf::RenderWindow* window, std::string value, sf::Font font, sf::Color color = sf::Color(TEXT_DEFAULT_COLOR));
+	TextFragment(std::string value, sf::Color color = sf::Color(TEXT_DEFAULT_COLOR));
 
-	sf::RenderWindow* window;
 	std::string value;
-	sf::Font font;
 	sf::Color color = sf::Color(TEXT_DEFAULT_COLOR);
 };

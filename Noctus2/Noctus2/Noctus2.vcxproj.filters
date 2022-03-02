@@ -24,6 +24,9 @@
     <ClCompile Include="TextFragment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NoctusParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="SourceCodePro-VariableFont_wght.ttf">
@@ -35,6 +38,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TextFragment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NoctusParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,8 @@ class TextFactory
 {
 public:
 	std::string DrawText(TextFragment fragment, std::string offsetString);
+	sf::RenderWindow *window;
+	sf::Font *font;
 private:
-	std::string WrapString(std::string *value, sf::RenderWindow *window, sf::Font font);
+	std::string WrapString(std::string *value, sf::RenderWindow *window, sf::Font *font);
 };

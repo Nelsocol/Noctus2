@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NoctusParser.cpp" />
     <ClCompile Include="TextFactory.cpp" />
     <ClCompile Include="TextFragment.cpp" />
   </ItemGroup>
@@ -153,6 +154,7 @@
     <Font Include="SourceCodePro-VariableFont_wght.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="NoctusParser.h" />
     <ClInclude Include="TextFactory.h" />
     <ClInclude Include="TextFragment.h" />
   </ItemGroup>

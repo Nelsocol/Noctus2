@@ -4,6 +4,7 @@
 #include <list>
 
 #include "TextFactory.h"
+#include "NoctusParser.h"
 
 int main()
 {
@@ -16,11 +17,13 @@ int main()
     }
 
     TextFactory textFactory;
-    std::list<TextFragment> fragmentList = *(new std::list<TextFragment>());
-    fragmentList.push_back(*(new TextFragment(&window, "Okay let's see if text wrapping is working. \nThat means adding a nice long string to test here real quick give me a moment. iuawvuwviawvlwnvijwklevweniuwcenlkwjalncjwbelubiuawnlvkjewanbwiuvk.baiwlebvlakwvjaehvabwlivbawliubwlivbwe", font)));
-    fragmentList.push_back(*(new TextFragment(&window, " Here's the next string", font, sf::Color(255, 0, 0, 255))));
-    fragmentList.push_back(*(new TextFragment(&window, " Here's a third string.\n\n", font)));
-    fragmentList.push_back(*(new TextFragment(&window, " Here's a string two lines down and in green!\n\n", font, sf::Color(0, 255, 0, 255))));
+    textFactory.font = &font;
+    textFactory.window = &window;
+
+    std::list<TextFragment> parsedList = *(new std::list<TextFragment>());
+    NoctusParser* parser = new NoctusParser();
+    parser->ParseString("This is a test string\nHello World!", &parsedList);
+    parser->ParseString(" This is the second string", &parsedList);
 
     while (window.isOpen())
     {
@@ -33,7 +36,7 @@ int main()
 
         window.clear();
         std::string offsetString = "";
-        for (std::list<TextFragment>::iterator iterator = fragmentList.begin(); iterator != fragmentList.end(); iterator++) {
+        for (std::list<TextFragment>::iterator iterator = parsedList.begin(); iterator != parsedList.end(); iterator++) {
             offsetString = textFactory.DrawText(*iterator, offsetString);
         }
         window.display();

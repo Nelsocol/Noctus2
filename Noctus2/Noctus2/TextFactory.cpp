@@ -6,14 +6,14 @@
 std::string TextFactory::DrawText(TextFragment fragment, std::string offsetString)
 {
     fragment.value.insert(0, offsetString);
-    std::string returnString = this->WrapString(&(fragment.value), fragment.window, fragment.font);
+    std::string returnString = this->WrapString(&(fragment.value), window, font);
 
     sf::Text text; 
-    text.setFont(fragment.font);
+    text.setFont(*font);
     text.setString(fragment.value);
     text.setCharacterSize(TEXT_DEFAULT_SIZE);
     text.setFillColor(fragment.color);
-    fragment.window->draw(text);
+    window->draw(text);
 
     return returnString;
 }
@@ -21,12 +21,12 @@ std::string TextFactory::DrawText(TextFragment fragment, std::string offsetStrin
 /*
     Inserts newlines into the given string so that words neatly wrap at the edge of the frame.
 */
-std::string TextFactory::WrapString(std::string *value, sf::RenderWindow* window, sf::Font font)
+std::string TextFactory::WrapString(std::string *value, sf::RenderWindow* window, sf::Font* font)
 {
     std::string newOffsetString = "";
 
     int windowWidth = window->getSize().x;
-    int glyphWidth = font.getGlyph('a', TEXT_DEFAULT_SIZE, false).bounds.width + 2;
+    int glyphWidth = font->getGlyph('a', TEXT_DEFAULT_SIZE, false).bounds.width + 2;
 
     int currentLineWidth = 0;
     int lastSpaceIndex = -1;
