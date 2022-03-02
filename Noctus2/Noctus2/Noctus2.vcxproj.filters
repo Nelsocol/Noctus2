@@ -21,6 +21,9 @@
     <ClCompile Include="TextFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextFragment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Font Include="SourceCodePro-VariableFont_wght.ttf">
@@ -29,6 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextFragment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

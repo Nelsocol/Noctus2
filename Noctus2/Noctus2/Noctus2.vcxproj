@@ -147,12 +147,14 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextFactory.cpp" />
+    <ClCompile Include="TextFragment.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="SourceCodePro-VariableFont_wght.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextFactory.h" />
+    <ClInclude Include="TextFragment.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,13 +3,14 @@
 #include <string.h>
 #include <iostream>
 
-#define TEXT_DEFAULT_COLOR 0xe8e8edff
+#include "TextFragment.h"
+
 #define TEXT_DEFAULT_SIZE 15
 
 class TextFactory 
 {
 public:
-	void DrawText(sf::RenderWindow *window, std::string value, sf::Font font, sf::Color color = sf::Color(TEXT_DEFAULT_COLOR));
+	std::string DrawText(TextFragment fragment, std::string offsetString);
 private:
-	void WrapString(std::string *value, sf::RenderWindow *window, sf::Font font);
+	std::string WrapString(std::string *value, sf::RenderWindow *window, sf::Font font);
 };
